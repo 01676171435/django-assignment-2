@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div style="width:30%; margin:auto;">
+    <form>
+      <h1>show_task DEMO</h1>
+    </form>
+  </div>
+  <br />
+  <div style="width:50%; margin:auto;">
+    {% if tasks %}
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in tasks %}
+            <tr>
+              <td style="text-align: center;">{{ item.taskTitle }}</td>
+              <td style="text-align: center;">
+                {{ item.taskDescription }}
+              </td>
+              <td style="text-align:center;">incomplete</td>
+              <td style="text-align: center;"><a href="{% url 'edit_task' Title=item.taskTitle %}" class='btn btn-warning btn-sm' >Edit</a> <a href="{% url 'delete_task' Title=item.taskTitle %}"class='btn btn-danger btn-sm'> Delete </a> <a class="btn btn-warning btn-sm"> complete </a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <h3>No Data avaiable</h3>
+    {% endif %}
+  </div>
+{% endblock %}
