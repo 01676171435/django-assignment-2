@@ -90,7 +90,7 @@ http://www.studywithanis.com
 
 
 ### image sytax
-![profile](./media/imgs/Ai.jpg)
+![profile](./media/imgs/Ai.JPG)
 😀
 
 
